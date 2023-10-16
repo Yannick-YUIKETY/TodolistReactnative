@@ -4,12 +4,13 @@ import Todo from './src/Todo'
 import Tuto from './tuto/Tuto'
 import Leboncoin from './tuto/leboncoin/Leboncoin'
 import AuthApp from './tuto/authApp/AuthApp'
+import Test from './tuto/test/Test'
 
 const App = () => {
 
   return (
       
-       <AuthApp/>
+      <Test/>
     
   )
 }
