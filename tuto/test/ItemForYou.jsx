@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import testStyles from './testStyles'
-import { black } from 'react-native-paper/lib/typescript/styles/themes/v2/colors'
 
 
 const ItemForYou = ({data}) => {

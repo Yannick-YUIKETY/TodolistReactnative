@@ -11,7 +11,7 @@ const datas = [
       nom: "D'Oliver VENOM",
       note: "4.9",
       formation: "UX - UI Design",
-      poste: "teacher",
+      poste: "Teacher",
       color: "#00cfcb"
   },
   {
@@ -20,7 +20,7 @@ const datas = [
       nom: "D'Oliver VENOM",
       note: "4.9",
       formation: "Animation in After Effects",
-      poste: "teacher",
+      poste: "Teacher",
       color: "#ff658c"
   },
   {
@@ -29,7 +29,7 @@ const datas = [
       nom: "D'Oliver VENOM",
       note: "4.9",
       formation: "Mobile App design",
-      poste: "teacher",
+      poste: "Teacher",
       color: "#7666ff"
   },
   {
@@ -38,7 +38,7 @@ const datas = [
       nom: "D'Oliver VENOM",
       note: "4.9",
       formation: "Data Scientist",
-      poste: "teacher",
+      poste: "Teacher",
       color: "#00cfcb"
   },
   {
@@ -47,7 +47,7 @@ const datas = [
       nom: "D'Oliver VENOM",
       note: "4.9",
       formation: "Requet SQL",
-      poste: "teacher",
+      poste: "Teacher",
       color: "#ff658c"
   },
 ]
@@ -79,7 +79,7 @@ const Test = () => {
       <View style={testStyles.box3}>
 
         <View style={testStyles.box31}>
-        <Text style={{color:"black",fontSize:25 , fontWeight:"300"}}>top Courses</Text>
+        <Text style={{color:"black",fontSize:25 , fontWeight:"300"}}>Top Courses</Text>
         </View>
 
         <View style={testStyles.box4}>
@@ -92,7 +92,7 @@ const Test = () => {
         
         </View>
 
-        <View >
+        <View style={testStyles.box31}>
           <Text style={{color:"black",fontSize:25 , fontWeight:"300"}}>For You</Text>
         </View>
         <View style={testStyles.boxFlatlist}>
