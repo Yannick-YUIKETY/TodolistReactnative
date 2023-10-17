@@ -48,6 +48,7 @@ const SignIn = ({navigation}) => {
           onChangeText={password => setPassword(password)}
           secureTextEntry={true}
         />
+
       
       <Button onPress={send}> Connexion </Button>
       <Button onPress={goTo}> Inscription </Button>
