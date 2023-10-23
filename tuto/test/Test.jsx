@@ -3,6 +3,9 @@ import React from 'react'
 import testStyles from './testStyles'
 import ItemCard from './ItemCard'
 import ItemForYou from './ItemForYou'
+import { Button } from 'react-native-paper'
+import auth from '@react-native-firebase/auth';
+
 
 const datas = [
   {
@@ -54,6 +57,9 @@ const datas = [
 
 const Test = () => {
 
+  const deconnexion = () => { 
+    auth().signOut()
+  }
 
   return (
     <View style={testStyles.container} >
@@ -65,6 +71,8 @@ const Test = () => {
 
         <View style={testStyles.box22}>
 
+          <Button onPress={deconnexion}> déconnexion</Button>
+
           <View style={testStyles.box221}>
             <Text style={{color:"white", fontSize:25 , fontWeight:"700"}} >HI , Davis</Text>
           </View>
@@ -72,6 +80,9 @@ const Test = () => {
           <View style={testStyles.box222}>
             <Text style={{color:"white" , fontSize:15}}>learning is easier and faster with us</Text>
           </View>
+
+
+
         </View>
 
       </View>

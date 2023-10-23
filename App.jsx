@@ -6,13 +6,16 @@ import Leboncoin from './tuto/leboncoin/Leboncoin'
 import AuthApp from './tuto/authApp/AuthApp'
 import Test from './tuto/test/Test'
 import RouteDavisScreen from './routesDavis/RouteDavisScreen'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 
 const App = () => {
   return (
       
       // <Test/>
-
+      <Provider store = {store}>
       <RouteDavisScreen/>
+      </Provider>
     
   )
 }

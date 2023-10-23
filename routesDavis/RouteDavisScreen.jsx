@@ -7,18 +7,30 @@ import SignUpScreen from '../tuto/public/SignUpScreen';
 import Test from '../tuto/test/Test';
 import ProfileScreen from '../tuto/private/ProfileScreen';
 import auth from '@react-native-firebase/auth';
+import { useSelector, useDispatch } from 'react-redux'
+import { resetUser, setUser } from '../redux/user';
 
 const Stack = createNativeStackNavigator() ;
 
 const RouteDavisScreen = () => {
 
+    
+
     // const [isSignedIn, setIsSignedIn] = useState(false) ;
     const [initializing, setInitializing] = useState(true) ; 
-    const [user , setUser]  = useState() ;
+    // const [user , setUser]  = useState() ;
+    
+    const user = useSelector(state => state.user) ; 
+    const dispatch = useDispatch() ;
 
     //change l'état de l'utilisateur
     const onUserStateChanged = (user) => { 
-        setUser(user) ;
+        //setUser(user) ;
+        if (! user){
+            dispatch(resetUser()) ;
+        }else{
+            dispatch(setUser(user.uid)) ;
+        }
         if(initializing) setInitializing (false) ;
     }
 
@@ -34,8 +46,8 @@ const RouteDavisScreen = () => {
         <Stack.Navigator>
                 { ! user ? (
         <>
-            <Stack.Screen name="SignIn" component={SignInScreen} />
-            <Stack.Screen name="SignUp" component={SignUpScreen} />
+            <Stack.Screen name="signin" component={SignInScreen} />
+            <Stack.Screen name="signup" component={SignUpScreen} />
         </>
         ) : (
         <>
