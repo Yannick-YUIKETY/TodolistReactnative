@@ -25,10 +25,14 @@ const SignUpScreen = ({navigation}) => {
 
           console.log('pas vide') ;
 
-          const user = await auth().createUserWithEmailAndPassword(email.trim() , password) ;
+          const userAuth = await auth().createUserWithEmailAndPassword(email.trim() , password) ;
+          console.log('userAuth' , userAuth) ;
+
+          const uid = userAuth.user.uid ;
+
 
           //enregistrement de l'utilisateur en base de donnée a l'aide de son uid (user:id)
-          await firestore().collection("user").doc(user.uid).set({email : email.trim()}) ;
+          await firestore().collection("user").doc(uid).set({email : email.trim()}) ;
 
         }
 

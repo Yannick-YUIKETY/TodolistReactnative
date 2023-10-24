@@ -55,10 +55,13 @@ const datas = [
   },
 ]
 
-const Test = () => {
+const Test = ({navigation}) => {
 
   const deconnexion = () => { 
     auth().signOut()
+  }
+  const myAccount = () => { 
+    navigation.navigate('profilescreen') ;
   }
 
   return (
@@ -67,6 +70,7 @@ const Test = () => {
       <View style={testStyles.box2}>
 
         <View style={testStyles.box21}>
+          <Button onPress={myAccount}>Mon Compte</Button>
         </View>
 
         <View style={testStyles.box22}>

@@ -53,7 +53,7 @@ const RouteDavisScreen = () => {
         <>
             
             <Stack.Screen name="Home" component={Test} />
-            <Stack.Screen name="Profile" component={ProfileScreen} />
+            <Stack.Screen name="profilescreen" component={ProfileScreen} />
         </>
         )
 
