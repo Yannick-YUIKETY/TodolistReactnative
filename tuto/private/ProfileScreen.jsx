@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux' ;
 import firestore  from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 import ImagePicker from 'react-native-image-picker';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 
 
@@ -40,7 +41,13 @@ const ProfileScreen = () => {
   const [email, setEmail] = React.useState('');
   //const [user, setUser] = React.useState();
 
-  const chooseFile = () => { 
+  const callbackCamera = (response) => { 
+    console.log(response) ;
+  }
+
+  const chooseFile = async () => { 
+    
+
     const options = {
       title: 'Select Image',
       storageOptions: {
@@ -48,7 +55,11 @@ const ProfileScreen = () => {
           path: 'images', // store camera images under Pictures/images for android and Documents/images for iOS
       },
     }
+    const result = await launchCamera(options,callbackCamera);
+    console.log("result " , result.assets[0].uri) ;
   }
+
+  
 
   useEffect(() => {
     read() ;
